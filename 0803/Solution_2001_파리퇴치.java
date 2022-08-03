@@ -16,25 +16,21 @@ public class Solution_2001_파리퇴치 {
 			int M = Integer.parseInt(st.nextToken());
 			int answer = 0;
 
-			int[][] map = new int[N][N];
+			int[][] map = new int[N + 1][N + 1];
 
-			for (int i = 0; i < N; i++) {
+			for (int i = 1; i <= N; i++) {
 				st = new StringTokenizer(in.readLine(), " ");
-				for (int j = 0; j < N; j++) {
-					map[i][j] = Integer.parseInt(st.nextToken());
+				for (int j = 1; j <= N; j++) {
+					map[i][j] = map[i - 1][j] + map[i][j - 1] - map[i - 1][j - 1] + Integer.parseInt(st.nextToken());
 				}
 			}
 
-			for (int r = 0; r <= N - M; r++) {
-				for (int c = 0; c <= N - M; c++) {
-					int temp = 0;
-					for (int mr = r; mr < M + r; mr++) {
-						for (int mc = c; mc < M + c; mc++) {
-							temp += map[mr][mc];
-						}
-					}
-					if (temp > answer)
+			for (int r = M; r <= N; r++) {
+				for (int c = M; c <= N; c++) {
+					int temp = map[r][c] - map[r - M][c] - map[r][c - M] + map[r - M][c - M];
+					if (temp > answer) {
 						answer = temp;
+					}
 				}
 			}
 			sb.append("#").append(tc).append(" ").append(answer).append("\n");
