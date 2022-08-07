@@ -1,29 +1,6 @@
-<style>
-    table{
-        margin:auto;
-        padding:auto;
-        font-size:150%;
-    }
-    th, td {
-        border:2px solid;
-        text-align:center;
-    }
-    span{
-        color:orange;
-    }
-    hr{
-        margin-top:15px;
-        margin-bottom:15px;
-    }
-</style>
+## <center>BOJ_12891_DNA 비밀번호</center>
 
-<center>
-
-## BOJ_12891_DNA 비밀번호
-
-</center>
-
-<table>
+<table align=center>
 <tr>
 <th>문제</th>
 <th>메모리</th>
@@ -36,13 +13,10 @@
 </tr>
 </table>
 <hr>
-<center>
 
-## BOJ_2023\_신기한 소수
+## <center>BOJ_2023\_신기한 소수</center>
 
-</center>
-
-<table>
+<table align=center>
 <tr>
 <th>문제</th>
 <th>메모리</th>
@@ -55,13 +29,10 @@
 </tr>
 </table>
 <hr>
-<center>
 
-## BOJ_2493\_탑
+## <center>BOJ_2493\_탑</center>
 
-</center>
-
-<table>
+<table align=center>
 <tr>
 <th>문제</th>
 <th>메모리</th>
