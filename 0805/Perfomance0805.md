@@ -38,7 +38,7 @@
 <hr>
 <center>
 
-## BOJ*2023*신기한 소수
+## BOJ_2023\_신기한 소수
 
 </center>
 
@@ -57,7 +57,7 @@
 <hr>
 <center>
 
-## BOJ*2493*탑
+## BOJ_2493\_탑
 
 </center>
 
