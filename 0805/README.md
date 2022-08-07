@@ -8,8 +8,10 @@
 </tr>
 <tr>
 <td><a href="https://www.acmicpc.net/problem/12891" target="_blank">링크</td>
-<td>31404<span style="color:#FFA500">kb</span></td>
-<td>284<span style="color:#FFA500">ms</span></td>
+<td>31404
+<span style="color:#FFA500">kb</span>
+</td>
+<td>284 <span style="color:#FFA500">ms</span> </td>
 </tr>
 </table>
 <hr>
