@@ -65,6 +65,8 @@ public class Solution_5644_무선충전 {
             for (int i = 0; i <= M; i++) {
                 int maxA = 0;
                 int maxB = 0;
+                int bcA = 0;
+                int bcB = 0;
                 qA.clear();
                 qB.clear();
                 for (int j = 0; j < BC; j++) {
@@ -78,49 +80,52 @@ public class Solution_5644_무선충전 {
                     }
                     if (tmpA > maxA) {
                         maxA = tmpA;
+                        bcA = j;
                     }
                     if (tmpB > maxB) {
                         maxB = tmpB;
+                        bcB = j;
                     }
                 }
                 while (maxA == maxB && maxA != 0) {
-                    int locA = 0;
-                    int locB = 0;
                     if (qA.size() == 0 && qB.size() == 0) {
-                        if (locA == locB) {
+                        if (bcA == bcB) {
                             maxA /= 2;
                             maxB /= 2;
                         }
                         break;
+                    }else if(bcA != bcB){
+                        break;
                     }
                     if (qA.size() == 0) {
-                        if (qB.peek()[0] >= maxB / 2) {
+                        if (qB.peek()[0] > maxB / 2) {
                             maxB = qB.peek()[0];
-                            locB = qB.poll()[1];
+                            bcB = qB.poll()[1];
                         } else {
                             qB.poll();
                         }
                     } else if (qB.size() == 0) {
-                        if (qA.peek()[0] >= maxA / 2) {
-                            maxA = qA.poll()[0];
+                        if (qA.peek()[0] > maxA / 2) {
+                            maxA = qA.peek()[0];
+                            bcA = qA.poll()[1];
                         } else {
                             qA.poll();
                         }
                     } else if (qA.peek()[0] > qB.peek()[0]) {
-                        if (qA.peek()[0] >= maxA / 2) {
-                            maxA = qA.poll()[0];
+                        if (qA.peek()[0] > maxA / 2) {
+                            maxA = qA.peek()[0];
+                            bcA = qA.poll()[1];
                         } else {
                             qA.poll();
                         }
                     } else {
-                        if (qB.peek()[0] >= maxB / 2) {
-                            maxB = qB.poll()[0];
-                            locB = qB.poll()[1];
+                        if (qB.peek()[0] > maxB / 2) {
+                            maxB = qB.peek()[0];
+                            bcB = qB.poll()[1];
                         } else {
                             qB.poll();
                         }
                     }
-
                 }
                 result += maxA + maxB;
             }
