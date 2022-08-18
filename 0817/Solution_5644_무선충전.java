@@ -13,14 +13,14 @@ public class Solution_5644_무선충전 {
         PriorityQueue<int[]> qA = new PriorityQueue<int[]>(new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
+                return o2[0] - o1[0];
             }
 
         });
         PriorityQueue<int[]> qB = new PriorityQueue<int[]>(new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
+                return o2[0] - o1[0];
             }
 
         });
@@ -94,32 +94,32 @@ public class Solution_5644_무선충전 {
                             maxB /= 2;
                         }
                         break;
-                    }else if(bcA != bcB){
+                    } else if (bcA != bcB) {
                         break;
                     }
                     if (qA.size() == 0) {
-                        if (qB.peek()[0] > maxB / 2) {
+                        if (qB.peek()[0] + maxB >= maxB) {
                             maxB = qB.peek()[0];
                             bcB = qB.poll()[1];
                         } else {
                             qB.poll();
                         }
                     } else if (qB.size() == 0) {
-                        if (qA.peek()[0] > maxA / 2) {
+                        if (qA.peek()[0] + maxB >= maxA) {
                             maxA = qA.peek()[0];
                             bcA = qA.poll()[1];
                         } else {
                             qA.poll();
                         }
                     } else if (qA.peek()[0] > qB.peek()[0]) {
-                        if (qA.peek()[0] > maxA / 2) {
+                        if (qA.peek()[0] + maxA >= maxA) {
                             maxA = qA.peek()[0];
                             bcA = qA.poll()[1];
                         } else {
                             qA.poll();
                         }
                     } else {
-                        if (qB.peek()[0] > maxB / 2) {
+                        if (qB.peek()[0] + maxB >= maxB) {
                             maxB = qB.peek()[0];
                             bcB = qB.poll()[1];
                         } else {
